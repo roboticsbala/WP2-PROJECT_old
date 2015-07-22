@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/Segment
+CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bala92/catkin_ws/Segment/build
+CMAKE_BINARY_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cluster_extraction.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/cluster_extraction.dir/flags.make
 
 CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o: CMakeFiles/cluster_extraction.dir/flags.make
 CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o: ../cluster_extraction.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o -c /home/bala92/catkin_ws/Segment/cluster_extraction.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/cluster_extraction.cpp
 
 CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/Segment/cluster_extraction.cpp > CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/cluster_extraction.cpp > CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.i
 
 CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/Segment/cluster_extraction.cpp -o CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/cluster_extraction.cpp -o CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.s
 
 CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o.requires:
 .PHONY : CMakeFiles/cluster_extraction.dir/cluster_extraction.cpp.o.requires
@@ -203,6 +203,6 @@ CMakeFiles/cluster_extraction.dir/clean:
 .PHONY : CMakeFiles/cluster_extraction.dir/clean
 
 CMakeFiles/cluster_extraction.dir/depend:
-	cd /home/bala92/catkin_ws/Segment/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build/CMakeFiles/cluster_extraction.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bala92/catkin_ws/src/WP2-PROJECT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/cluster_extraction.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cluster_extraction.dir/depend
 

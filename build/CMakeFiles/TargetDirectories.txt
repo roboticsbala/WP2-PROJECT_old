@@ -1,8 +1,4 @@
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/cluster_extraction.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/conditional_euclidean_clustering.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/correspondence_grouping_FPFH.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/correspondence_grouping_SHOT.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/cylinder_segmentation.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/pcd_size.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/region_growing_rgb_segmentation.dir
-/home/bala92/catkin_ws/Segment/build/CMakeFiles/region_growing_segmentation.dir
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/correspondence_grouping_SHOT.dir
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/correspondence_grouping_SHOT_Iterative.dir
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/objectExtractor.dir
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/pcd_size.dir

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bala92/catkin_ws/src/WP2-PROJECT/directoryScan.cpp
+boost/filesystem/operations.hpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/boost/filesystem/operations.hpp
+boost/filesystem/path.hpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/boost/filesystem/path.hpp
+boost/progress.hpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/boost/progress.hpp
+iostream
+-
+boost/filesystem.hpp
+-
+

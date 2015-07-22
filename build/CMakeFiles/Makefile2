@@ -50,115 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/Segment
+CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bala92/catkin_ws/Segment/build
-
-#=============================================================================
-# Target rules for target CMakeFiles/cluster_extraction.dir
-
-# All Build rule for target.
-CMakeFiles/cluster_extraction.dir/all:
-	$(MAKE) -f CMakeFiles/cluster_extraction.dir/build.make CMakeFiles/cluster_extraction.dir/depend
-	$(MAKE) -f CMakeFiles/cluster_extraction.dir/build.make CMakeFiles/cluster_extraction.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  1
-	@echo "Built target cluster_extraction"
-.PHONY : CMakeFiles/cluster_extraction.dir/all
-
-# Include target in all.
-all: CMakeFiles/cluster_extraction.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cluster_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cluster_extraction.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/cluster_extraction.dir/rule
-
-# Convenience name for target.
-cluster_extraction: CMakeFiles/cluster_extraction.dir/rule
-.PHONY : cluster_extraction
-
-# clean rule for target.
-CMakeFiles/cluster_extraction.dir/clean:
-	$(MAKE) -f CMakeFiles/cluster_extraction.dir/build.make CMakeFiles/cluster_extraction.dir/clean
-.PHONY : CMakeFiles/cluster_extraction.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/cluster_extraction.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/conditional_euclidean_clustering.dir
-
-# All Build rule for target.
-CMakeFiles/conditional_euclidean_clustering.dir/all:
-	$(MAKE) -f CMakeFiles/conditional_euclidean_clustering.dir/build.make CMakeFiles/conditional_euclidean_clustering.dir/depend
-	$(MAKE) -f CMakeFiles/conditional_euclidean_clustering.dir/build.make CMakeFiles/conditional_euclidean_clustering.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  2
-	@echo "Built target conditional_euclidean_clustering"
-.PHONY : CMakeFiles/conditional_euclidean_clustering.dir/all
-
-# Include target in all.
-all: CMakeFiles/conditional_euclidean_clustering.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/conditional_euclidean_clustering.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/conditional_euclidean_clustering.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/conditional_euclidean_clustering.dir/rule
-
-# Convenience name for target.
-conditional_euclidean_clustering: CMakeFiles/conditional_euclidean_clustering.dir/rule
-.PHONY : conditional_euclidean_clustering
-
-# clean rule for target.
-CMakeFiles/conditional_euclidean_clustering.dir/clean:
-	$(MAKE) -f CMakeFiles/conditional_euclidean_clustering.dir/build.make CMakeFiles/conditional_euclidean_clustering.dir/clean
-.PHONY : CMakeFiles/conditional_euclidean_clustering.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/conditional_euclidean_clustering.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/correspondence_grouping_FPFH.dir
-
-# All Build rule for target.
-CMakeFiles/correspondence_grouping_FPFH.dir/all:
-	$(MAKE) -f CMakeFiles/correspondence_grouping_FPFH.dir/build.make CMakeFiles/correspondence_grouping_FPFH.dir/depend
-	$(MAKE) -f CMakeFiles/correspondence_grouping_FPFH.dir/build.make CMakeFiles/correspondence_grouping_FPFH.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  3
-	@echo "Built target correspondence_grouping_FPFH"
-.PHONY : CMakeFiles/correspondence_grouping_FPFH.dir/all
-
-# Include target in all.
-all: CMakeFiles/correspondence_grouping_FPFH.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/correspondence_grouping_FPFH.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/correspondence_grouping_FPFH.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/correspondence_grouping_FPFH.dir/rule
-
-# Convenience name for target.
-correspondence_grouping_FPFH: CMakeFiles/correspondence_grouping_FPFH.dir/rule
-.PHONY : correspondence_grouping_FPFH
-
-# clean rule for target.
-CMakeFiles/correspondence_grouping_FPFH.dir/clean:
-	$(MAKE) -f CMakeFiles/correspondence_grouping_FPFH.dir/build.make CMakeFiles/correspondence_grouping_FPFH.dir/clean
-.PHONY : CMakeFiles/correspondence_grouping_FPFH.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/correspondence_grouping_FPFH.dir/clean
-.PHONY : clean
+CMAKE_BINARY_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/correspondence_grouping_SHOT.dir
@@ -167,7 +62,7 @@ clean: CMakeFiles/correspondence_grouping_FPFH.dir/clean
 CMakeFiles/correspondence_grouping_SHOT.dir/all:
 	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT.dir/build.make CMakeFiles/correspondence_grouping_SHOT.dir/depend
 	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT.dir/build.make CMakeFiles/correspondence_grouping_SHOT.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles  1
 	@echo "Built target correspondence_grouping_SHOT"
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/all
 
@@ -177,9 +72,9 @@ all: CMakeFiles/correspondence_grouping_SHOT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/correspondence_grouping_SHOT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/correspondence_grouping_SHOT.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 0
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/rule
 
 # Convenience name for target.
@@ -196,38 +91,73 @@ clean: CMakeFiles/correspondence_grouping_SHOT.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cylinder_segmentation.dir
+# Target rules for target CMakeFiles/correspondence_grouping_SHOT_Iterative.dir
 
 # All Build rule for target.
-CMakeFiles/cylinder_segmentation.dir/all:
-	$(MAKE) -f CMakeFiles/cylinder_segmentation.dir/build.make CMakeFiles/cylinder_segmentation.dir/depend
-	$(MAKE) -f CMakeFiles/cylinder_segmentation.dir/build.make CMakeFiles/cylinder_segmentation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  5
-	@echo "Built target cylinder_segmentation"
-.PHONY : CMakeFiles/cylinder_segmentation.dir/all
+CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/all:
+	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/build.make CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/depend
+	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/build.make CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles  2
+	@echo "Built target correspondence_grouping_SHOT_Iterative"
+.PHONY : CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/all
 
 # Include target in all.
-all: CMakeFiles/cylinder_segmentation.dir/all
+all: CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cylinder_segmentation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cylinder_segmentation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/cylinder_segmentation.dir/rule
+CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 0
+.PHONY : CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/rule
 
 # Convenience name for target.
-cylinder_segmentation: CMakeFiles/cylinder_segmentation.dir/rule
-.PHONY : cylinder_segmentation
+correspondence_grouping_SHOT_Iterative: CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/rule
+.PHONY : correspondence_grouping_SHOT_Iterative
 
 # clean rule for target.
-CMakeFiles/cylinder_segmentation.dir/clean:
-	$(MAKE) -f CMakeFiles/cylinder_segmentation.dir/build.make CMakeFiles/cylinder_segmentation.dir/clean
-.PHONY : CMakeFiles/cylinder_segmentation.dir/clean
+CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/clean:
+	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/build.make CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/clean
+.PHONY : CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/cylinder_segmentation.dir/clean
+clean: CMakeFiles/correspondence_grouping_SHOT_Iterative.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/objectExtractor.dir
+
+# All Build rule for target.
+CMakeFiles/objectExtractor.dir/all:
+	$(MAKE) -f CMakeFiles/objectExtractor.dir/build.make CMakeFiles/objectExtractor.dir/depend
+	$(MAKE) -f CMakeFiles/objectExtractor.dir/build.make CMakeFiles/objectExtractor.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles  3
+	@echo "Built target objectExtractor"
+.PHONY : CMakeFiles/objectExtractor.dir/all
+
+# Include target in all.
+all: CMakeFiles/objectExtractor.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/objectExtractor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/objectExtractor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 0
+.PHONY : CMakeFiles/objectExtractor.dir/rule
+
+# Convenience name for target.
+objectExtractor: CMakeFiles/objectExtractor.dir/rule
+.PHONY : objectExtractor
+
+# clean rule for target.
+CMakeFiles/objectExtractor.dir/clean:
+	$(MAKE) -f CMakeFiles/objectExtractor.dir/build.make CMakeFiles/objectExtractor.dir/clean
+.PHONY : CMakeFiles/objectExtractor.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/objectExtractor.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -237,7 +167,7 @@ clean: CMakeFiles/cylinder_segmentation.dir/clean
 CMakeFiles/pcd_size.dir/all:
 	$(MAKE) -f CMakeFiles/pcd_size.dir/build.make CMakeFiles/pcd_size.dir/depend
 	$(MAKE) -f CMakeFiles/pcd_size.dir/build.make CMakeFiles/pcd_size.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles  4
 	@echo "Built target pcd_size"
 .PHONY : CMakeFiles/pcd_size.dir/all
 
@@ -247,9 +177,9 @@ all: CMakeFiles/pcd_size.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/pcd_size.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/pcd_size.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles 0
 .PHONY : CMakeFiles/pcd_size.dir/rule
 
 # Convenience name for target.
@@ -263,76 +193,6 @@ CMakeFiles/pcd_size.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/pcd_size.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/region_growing_rgb_segmentation.dir
-
-# All Build rule for target.
-CMakeFiles/region_growing_rgb_segmentation.dir/all:
-	$(MAKE) -f CMakeFiles/region_growing_rgb_segmentation.dir/build.make CMakeFiles/region_growing_rgb_segmentation.dir/depend
-	$(MAKE) -f CMakeFiles/region_growing_rgb_segmentation.dir/build.make CMakeFiles/region_growing_rgb_segmentation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  7
-	@echo "Built target region_growing_rgb_segmentation"
-.PHONY : CMakeFiles/region_growing_rgb_segmentation.dir/all
-
-# Include target in all.
-all: CMakeFiles/region_growing_rgb_segmentation.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/region_growing_rgb_segmentation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/region_growing_rgb_segmentation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/region_growing_rgb_segmentation.dir/rule
-
-# Convenience name for target.
-region_growing_rgb_segmentation: CMakeFiles/region_growing_rgb_segmentation.dir/rule
-.PHONY : region_growing_rgb_segmentation
-
-# clean rule for target.
-CMakeFiles/region_growing_rgb_segmentation.dir/clean:
-	$(MAKE) -f CMakeFiles/region_growing_rgb_segmentation.dir/build.make CMakeFiles/region_growing_rgb_segmentation.dir/clean
-.PHONY : CMakeFiles/region_growing_rgb_segmentation.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/region_growing_rgb_segmentation.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/region_growing_segmentation.dir
-
-# All Build rule for target.
-CMakeFiles/region_growing_segmentation.dir/all:
-	$(MAKE) -f CMakeFiles/region_growing_segmentation.dir/build.make CMakeFiles/region_growing_segmentation.dir/depend
-	$(MAKE) -f CMakeFiles/region_growing_segmentation.dir/build.make CMakeFiles/region_growing_segmentation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles  8
-	@echo "Built target region_growing_segmentation"
-.PHONY : CMakeFiles/region_growing_segmentation.dir/all
-
-# Include target in all.
-all: CMakeFiles/region_growing_segmentation.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/region_growing_segmentation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/region_growing_segmentation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bala92/catkin_ws/Segment/build/CMakeFiles 0
-.PHONY : CMakeFiles/region_growing_segmentation.dir/rule
-
-# Convenience name for target.
-region_growing_segmentation: CMakeFiles/region_growing_segmentation.dir/rule
-.PHONY : region_growing_segmentation
-
-# clean rule for target.
-CMakeFiles/region_growing_segmentation.dir/clean:
-	$(MAKE) -f CMakeFiles/region_growing_segmentation.dir/build.make CMakeFiles/region_growing_segmentation.dir/clean
-.PHONY : CMakeFiles/region_growing_segmentation.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/region_growing_segmentation.dir/clean
 .PHONY : clean
 
 #=============================================================================

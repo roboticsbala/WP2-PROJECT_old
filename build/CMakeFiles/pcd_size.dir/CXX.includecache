@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bala92/catkin_ws/Segment/pcd_size.cpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/pcd_size.cpp
 pcl/ModelCoefficients.h
 -
 pcl/point_types.h

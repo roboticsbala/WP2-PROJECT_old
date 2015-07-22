@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/Segment
+CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bala92/catkin_ws/Segment/build
+CMAKE_BINARY_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/correspondence_grouping_SHOT.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/correspondence_grouping_SHOT.dir/flags.make
 
 CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o: CMakeFiles/correspondence_grouping_SHOT.dir/flags.make
 CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o: ../correspondence_grouping_SHOT.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o -c /home/bala92/catkin_ws/Segment/correspondence_grouping_SHOT.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp
 
 CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/Segment/correspondence_grouping_SHOT.cpp > CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp > CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i
 
 CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/Segment/correspondence_grouping_SHOT.cpp -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s
 
 CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires:
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires
@@ -203,6 +203,6 @@ CMakeFiles/correspondence_grouping_SHOT.dir/clean:
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/clean
 
 CMakeFiles/correspondence_grouping_SHOT.dir/depend:
-	cd /home/bala92/catkin_ws/Segment/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build/CMakeFiles/correspondence_grouping_SHOT.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bala92/catkin_ws/src/WP2-PROJECT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/correspondence_grouping_SHOT.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/depend
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bala92/catkin_ws/Segment/correspondence_grouping_FPFH.cpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_FPFH.cpp
 pcl/io/pcd_io.h
 -
 pcl/point_cloud.h

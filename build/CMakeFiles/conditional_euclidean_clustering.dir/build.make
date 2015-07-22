@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/Segment
+CMAKE_SOURCE_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bala92/catkin_ws/Segment/build
+CMAKE_BINARY_DIR = /home/bala92/catkin_ws/src/WP2-PROJECT/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/conditional_euclidean_clustering.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/conditional_euclidean_clustering.dir/flags.make
 
 CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o: CMakeFiles/conditional_euclidean_clustering.dir/flags.make
 CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o: ../conditional_euclidean_clustering.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/Segment/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o -c /home/bala92/catkin_ws/Segment/conditional_euclidean_clustering.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/conditional_euclidean_clustering.cpp
 
 CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/Segment/conditional_euclidean_clustering.cpp > CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/conditional_euclidean_clustering.cpp > CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.i
 
 CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/Segment/conditional_euclidean_clustering.cpp -o CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/conditional_euclidean_clustering.cpp -o CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.s
 
 CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o.requires:
 .PHONY : CMakeFiles/conditional_euclidean_clustering.dir/conditional_euclidean_clustering.cpp.o.requires
@@ -203,6 +203,6 @@ CMakeFiles/conditional_euclidean_clustering.dir/clean:
 .PHONY : CMakeFiles/conditional_euclidean_clustering.dir/clean
 
 CMakeFiles/conditional_euclidean_clustering.dir/depend:
-	cd /home/bala92/catkin_ws/Segment/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build /home/bala92/catkin_ws/Segment/build/CMakeFiles/conditional_euclidean_clustering.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bala92/catkin_ws/src/WP2-PROJECT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles/conditional_euclidean_clustering.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/conditional_euclidean_clustering.dir/depend
 
