@@ -1,0 +1,38 @@
+--------------------------------------------------------------------------------------
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/test/David_Table_131023_Mor_seg
+--------------------------------------------------------------------------------------
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> PenStand.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Mouse.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Keyboard.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Monitor.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers_2.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> CPU.pcd   :  1
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers_1.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> PenStand.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Mouse.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Keyboard.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Monitor.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers_2.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> CPU.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers_1.pcd   :  0
+--------------------------------------------------------------------------------------
+/home/bala92/catkin_ws/src/WP2-PROJECT/build/test/David_Table_131023_Aft_seg
+--------------------------------------------------------------------------------------
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> PenStand.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Mouse.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Keyboard.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Monitor.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers_2.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> CPU.pcd   :  0
+David_Table_131023_Mor_seg.pcd <<<<<>>>>> Papers_1.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> PenStand.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Mouse.pcd   :  0
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Keyboard.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Monitor.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers_2.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> CPU.pcd   :  1
+David_Table_131023_Aft_seg.pcd <<<<<>>>>> Papers_1.pcd   :  1

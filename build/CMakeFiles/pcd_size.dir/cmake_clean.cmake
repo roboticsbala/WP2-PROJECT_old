@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/pcd_size.dir/pcd_size.cpp.o"
+  "CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o"
   "pcd_size.pdb"
   "pcd_size"
 )

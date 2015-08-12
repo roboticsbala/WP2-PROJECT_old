@@ -52,37 +52,37 @@ include CMakeFiles/correspondence_grouping_SHOT.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/correspondence_grouping_SHOT.dir/flags.make
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o: CMakeFiles/correspondence_grouping_SHOT.dir/flags.make
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o: ../correspondence_grouping_SHOT.cpp
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o: CMakeFiles/correspondence_grouping_SHOT.dir/flags.make
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o: ../src/correspondence_grouping_SHOT.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/src/correspondence_grouping_SHOT.cpp
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp > CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.i
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/src/correspondence_grouping_SHOT.cpp > CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.i
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp -o CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.s
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/src/correspondence_grouping_SHOT.cpp -o CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.s
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires:
-.PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.requires:
+.PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.requires
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.provides: CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires
-	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT.dir/build.make CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.provides.build
-.PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.provides
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.provides: CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.requires
+	$(MAKE) -f CMakeFiles/correspondence_grouping_SHOT.dir/build.make CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.provides.build
+.PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.provides
 
-CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.provides.build: CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o
+CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.provides.build: CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o
 
 # Object files for target correspondence_grouping_SHOT
 correspondence_grouping_SHOT_OBJECTS = \
-"CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o"
+"CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o"
 
 # External object files for target correspondence_grouping_SHOT
 correspondence_grouping_SHOT_EXTERNAL_OBJECTS =
 
-correspondence_grouping_SHOT: CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o
+correspondence_grouping_SHOT: CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o
 correspondence_grouping_SHOT: CMakeFiles/correspondence_grouping_SHOT.dir/build.make
 correspondence_grouping_SHOT: /usr/lib/x86_64-linux-gnu/libboost_system.so
 correspondence_grouping_SHOT: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -195,7 +195,7 @@ correspondence_grouping_SHOT: CMakeFiles/correspondence_grouping_SHOT.dir/link.t
 CMakeFiles/correspondence_grouping_SHOT.dir/build: correspondence_grouping_SHOT
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/build
 
-CMakeFiles/correspondence_grouping_SHOT.dir/requires: CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o.requires
+CMakeFiles/correspondence_grouping_SHOT.dir/requires: CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o.requires
 .PHONY : CMakeFiles/correspondence_grouping_SHOT.dir/requires
 
 CMakeFiles/correspondence_grouping_SHOT.dir/clean:

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bala92/catkin_ws/src/WP2-PROJECT/correspondence_grouping_SHOT.cpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/src/correspondence_grouping_SHOT.cpp
 pcl/io/pcd_io.h
 -
 pcl/point_cloud.h

@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/objectExtractor.dir/objectExtractor.cpp.o"
+  "CMakeFiles/objectExtractor.dir/src/objectExtractor.cpp.o"
   "objectExtractor.pdb"
   "objectExtractor"
 )

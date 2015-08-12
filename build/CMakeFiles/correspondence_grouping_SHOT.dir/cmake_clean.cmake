@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/correspondence_grouping_SHOT.dir/correspondence_grouping_SHOT.cpp.o"
+  "CMakeFiles/correspondence_grouping_SHOT.dir/src/correspondence_grouping_SHOT.cpp.o"
   "correspondence_grouping_SHOT.pdb"
   "correspondence_grouping_SHOT"
 )

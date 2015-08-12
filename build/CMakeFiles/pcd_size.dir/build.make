@@ -52,37 +52,37 @@ include CMakeFiles/pcd_size.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/pcd_size.dir/flags.make
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.o: CMakeFiles/pcd_size.dir/flags.make
-CMakeFiles/pcd_size.dir/pcd_size.cpp.o: ../pcd_size.cpp
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o: CMakeFiles/pcd_size.dir/flags.make
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o: ../src/pcd_size.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bala92/catkin_ws/src/WP2-PROJECT/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/pcd_size.dir/pcd_size.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/pcd_size.dir/pcd_size.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/pcd_size.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o -c /home/bala92/catkin_ws/src/WP2-PROJECT/src/pcd_size.cpp
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pcd_size.dir/pcd_size.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/pcd_size.cpp > CMakeFiles/pcd_size.dir/pcd_size.cpp.i
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pcd_size.dir/src/pcd_size.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bala92/catkin_ws/src/WP2-PROJECT/src/pcd_size.cpp > CMakeFiles/pcd_size.dir/src/pcd_size.cpp.i
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pcd_size.dir/pcd_size.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/pcd_size.cpp -o CMakeFiles/pcd_size.dir/pcd_size.cpp.s
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pcd_size.dir/src/pcd_size.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bala92/catkin_ws/src/WP2-PROJECT/src/pcd_size.cpp -o CMakeFiles/pcd_size.dir/src/pcd_size.cpp.s
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.o.requires:
-.PHONY : CMakeFiles/pcd_size.dir/pcd_size.cpp.o.requires
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.requires:
+.PHONY : CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.requires
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.o.provides: CMakeFiles/pcd_size.dir/pcd_size.cpp.o.requires
-	$(MAKE) -f CMakeFiles/pcd_size.dir/build.make CMakeFiles/pcd_size.dir/pcd_size.cpp.o.provides.build
-.PHONY : CMakeFiles/pcd_size.dir/pcd_size.cpp.o.provides
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.provides: CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.requires
+	$(MAKE) -f CMakeFiles/pcd_size.dir/build.make CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.provides.build
+.PHONY : CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.provides
 
-CMakeFiles/pcd_size.dir/pcd_size.cpp.o.provides.build: CMakeFiles/pcd_size.dir/pcd_size.cpp.o
+CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.provides.build: CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o
 
 # Object files for target pcd_size
 pcd_size_OBJECTS = \
-"CMakeFiles/pcd_size.dir/pcd_size.cpp.o"
+"CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o"
 
 # External object files for target pcd_size
 pcd_size_EXTERNAL_OBJECTS =
 
-pcd_size: CMakeFiles/pcd_size.dir/pcd_size.cpp.o
+pcd_size: CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o
 pcd_size: CMakeFiles/pcd_size.dir/build.make
 pcd_size: /usr/lib/x86_64-linux-gnu/libboost_system.so
 pcd_size: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -195,7 +195,7 @@ pcd_size: CMakeFiles/pcd_size.dir/link.txt
 CMakeFiles/pcd_size.dir/build: pcd_size
 .PHONY : CMakeFiles/pcd_size.dir/build
 
-CMakeFiles/pcd_size.dir/requires: CMakeFiles/pcd_size.dir/pcd_size.cpp.o.requires
+CMakeFiles/pcd_size.dir/requires: CMakeFiles/pcd_size.dir/src/pcd_size.cpp.o.requires
 .PHONY : CMakeFiles/pcd_size.dir/requires
 
 CMakeFiles/pcd_size.dir/clean:

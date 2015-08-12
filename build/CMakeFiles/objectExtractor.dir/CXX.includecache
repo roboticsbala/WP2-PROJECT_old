@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bala92/catkin_ws/src/WP2-PROJECT/objectExtractor.cpp
+/home/bala92/catkin_ws/src/WP2-PROJECT/src/objectExtractor.cpp
 fstream
 -
 iostream
