@@ -1,0 +1,16 @@
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Keyboard_David_Table_131028_Mor_seg.pcd : 377 -> 1
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> CPU_David_Table_131101_Mor_seg.pcd : 0 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> CPU_David_Table_131101_Eve_seg.pcd : 34 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> CPU_David_Table_131101_Aft_seg.pcd : 0 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Monitor_David_Table_131101_Mor_seg.pcd : 29 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Keyboard_David_Table_131023_Mor_seg.pcd : 278 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Keyboard_David_Table_131112_Aft_seg.pcd : 64 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Monitor_David_Table_131112_Aft_seg.pcd : 0 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Monitor_David_Table_131101_Eve_seg.pcd : 91 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Keyboard_David_Table_131028_Aft_seg.pcd : 371 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Monitor_David_Table_131028_Aft_seg.pcd : 64 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> CPU_David_Table_131023_Aft_seg.pcd : 0 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Keyboard_David_Table_131023_Aft_seg.pcd : 155 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> CPU_David_Table_131023_Mor_seg.pcd : 0 -> 0
+Keyboard_David_Table_131028_Mor_seg.pcd <<<>>> Monitor_David_Table_131109_Aft_seg.pcd : 31 -> 0
+CPU_David_Table_131101_Mor_seg.pcd <<<>>> Keyboard_David_Table_131028_Mor_seg.pcd : 0 -> 0

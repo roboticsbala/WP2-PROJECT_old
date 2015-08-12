@@ -1,6 +1,5 @@
-//CORRESPONDENCE GROUPING FRAMEWORK FOR OBJECT vs OBJECT
-//NEEDS SCENE PCD FILES AND CORRESPONDING ANNOTATION XML FILES IN THE SAME DIRECTORY
-//EXTRACTS OBJECTS FROM ALL THE SCENES AND FINDS CORRESPONDENCES WITH OBJECTS FROM SAME AND OTHER SCENES
+//CORRESPONDENCE GROUPING OBJ-OBJ FRAMEWORK VERSION 1.0
+//NEEDS OBJECT MODEL CATEGORY A, B IN DIFFERENT DIRECTORIES
 
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_cloud.h>
@@ -22,15 +21,7 @@
 #include "boost/progress.hpp"
 #include <iostream>
 #include <fstream>
-
-#include <ios>
 #include <sstream>
-#include <boost/property_tree/xml_parser.hpp>
-
-#include <pcl/point_types.h>
-#include <boost/property_tree/ptree.hpp>
-#include <pcl/filters/passthrough.h>
-
 
 #define BOOST_FILESYSTEM_VERSION 3
 #define BOOST_FILESYSTEM_NO_DEPRECATED 
@@ -39,33 +30,6 @@
 #include <string>
 
 namespace fs = boost::filesystem;
-using namespace boost::property_tree;
-
-static const std::string TAG_SCENARIO = "scenario";
-static const std::string TAG_NAME = "name";
-static const std::string TAG_OBJECT = "object";
-static const std::string TAG_NOBJECTS = "numberOfObjects";
-static const std::string TAG_ALLOBJECTS = "allObjects";
-static const std::string TAG_POSE = "pose";
-static const std::string TAG_DIMENSIONS = "dimensions";
-static const std::string TAG_LENGTH = "length";
-static const std::string TAG_WIDTH = "width";
-static const std::string TAG_HEIGHT = "height";
-static const std::string TAG_COLOR = "color";
-static const std::string TAG_INDICES = "indices";
-
-pcl::PCDReader reader;
-pcl::PCDWriter writer;
-
-class object
-{
-public:
-    std::string name;
-    std::string color;
-    pcl::PointIndices indices;  
-};
-
-std::vector<object> _objectList;
 
 typedef pcl::PointXYZRGBA PointType;
 typedef pcl::Normal NormalType;
@@ -77,28 +41,28 @@ bool show_keypoints_ (false);
 bool show_correspondences_ (false);
 bool use_cloud_resolution_ (false);
 bool use_hough_ (true);
-float model_ss_ (0.01f);
-float scene_ss_ (0.01f);
-float rf_rad_ (0.015f);
-float descr_rad_ (0.02f);
-float cg_size_ (0.01f);
-float cg_thresh_ (5.0f);
+float model_ss_ (0.015f);
+float scene_ss_ (0.015f);
+float rf_rad_ (0.06f);
+float descr_rad_ (0.08f);
+float cg_size_ (0.04f);
+float cg_thresh_ (7.0f);
+float kd_thres_ (0.25f);
 
-pcl::PointCloud<PointType>::Ptr model_cloud (new pcl::PointCloud<PointType> ());
+pcl::PointCloud<PointType>::Ptr model (new pcl::PointCloud<PointType> ());
 pcl::PointCloud<PointType>::Ptr model_keypoints (new pcl::PointCloud<PointType> ());
-pcl::PointCloud<PointType>::Ptr scene_cloud (new pcl::PointCloud<PointType> ());
+pcl::PointCloud<PointType>::Ptr scene (new pcl::PointCloud<PointType> ());
 pcl::PointCloud<PointType>::Ptr scene_keypoints (new pcl::PointCloud<PointType> ());
 pcl::PointCloud<NormalType>::Ptr model_normals (new pcl::PointCloud<NormalType> ());
 pcl::PointCloud<NormalType>::Ptr scene_normals (new pcl::PointCloud<NormalType> ());
 pcl::PointCloud<DescriptorType>::Ptr model_descriptors (new pcl::PointCloud<DescriptorType> ());
 pcl::PointCloud<DescriptorType>::Ptr scene_descriptors (new pcl::PointCloud<DescriptorType> ());
 
-int score[10][10] = {};
-int s_file_count = 0;
-int m_file_count = 0;
+std::string model_filename_;
+std::string scene_filename_;
 
-std::string model_filename;
-
+fs::path model_path( fs::initial_path<fs::path>());
+fs::path scene_path( fs::initial_path<fs::path>());
 
 void
 showHelp (char *filename)
@@ -109,7 +73,7 @@ showHelp (char *filename)
   std::cout << "*             Correspondence Grouping Tutorial - Usage Guide              *" << std::endl;
   std::cout << "*                                                                         *" << std::endl;
   std::cout << "***************************************************************************" << std::endl << std::endl;
-  std::cout << "Usage: " << filename << " pcd_folder [Options]" << std::endl << std::endl;
+  std::cout << "Usage: " << filename << " model_path scene_path [Options]" << std::endl << std::endl;
   std::cout << "Options:" << std::endl;
   std::cout << "     -h:                     Show this help." << std::endl;
   std::cout << "     -k:                     Show used keypoints." << std::endl;
@@ -125,8 +89,7 @@ showHelp (char *filename)
   std::cout << "     --cg_thresh val:        Clustering threshold (default 5)" << std::endl << std::endl;
 }
 
-
-fs::path
+void
 parseCommandLine (int argc, char *argv[])
 {
   //Show help
@@ -136,26 +99,33 @@ parseCommandLine (int argc, char *argv[])
     exit (0);
   }
 
-  //Directory path
-  	fs::path folder_path( fs::initial_path<fs::path>());
+  //Model & scene directory path
 
- 	if ( argc > 1 )
- 	{
-    	folder_path = fs::system_complete( fs::path( argv[1]));
-    	std::cout << folder_path.string() << std::endl;
-	}
+  if ( argc > 2 )
+  {
+    model_path = fs::system_complete( fs::path( argv[1]));
+    scene_path = fs::system_complete( fs::path( argv[2]));
+    std::cout << model_path.string() << std::endl;
+    std::cout << scene_path.string() << std::endl;
+  }
 
-	else
-	{
-	    showHelp (argv[0]);
-	    exit (-1);
-	}
+  else
+  {
+    showHelp (argv[0]);
+    exit (-1);
+  }
 
-	if (!fs::exists(folder_path))
-	{
-	    std::cout << "\nNot found: " << folder_path.string() << std::endl;
-	    exit (-1);
-	}
+  if (!fs::exists(model_path))
+  {
+    std::cout << "\nNot found: " << model_path.string() << std::endl;
+    exit (-1);
+  }
+
+  if (!fs::exists(scene_path))
+  {
+    std::cout << "\nNot found: " << scene_path.string() << std::endl;
+    exit (-1);
+  }
 
 //Program behavior
   
@@ -197,7 +167,6 @@ parseCommandLine (int argc, char *argv[])
   pcl::console::parse_argument (argc, argv, "--descr_rad", descr_rad_);
   pcl::console::parse_argument (argc, argv, "--cg_size", cg_size_);
   pcl::console::parse_argument (argc, argv, "--cg_thresh", cg_thresh_);
-  return folder_path.string();
 }
 
 void
@@ -252,167 +221,41 @@ computeCloudResolution (const pcl::PointCloud<PointType>::ConstPtr &cloud)
   }
 }
 
-
-std::vector<std::string> 
-pathIteration (fs::path folder)
+int
+loadCloud ()
 {
-	std::string fileN;
-	std::vector<std::string> filenames;
-	fs::directory_iterator it_s(folder);
-    fs::directory_iterator endit_s;
-    std::cout << "Files found:" << std::endl;
-    while(it_s != endit_s) //for every scene
-    	{  
-    		if(fs::is_regular_file(*it_s) && it_s->path().extension() == ".pcd") 
-      		{ 
-        		fileN = folder.string() + "/" + it_s->path().filename().string();
-        		fileN = fileN.erase(fileN.find_last_of("."), 4);
-        		std::cout << fileN << std::endl;
-        		filenames.push_back(fileN);
-        	}
-
-        	++it_s;
-        }
-
-    return filenames;
-}
-
-
-void
-displayScore()
-{ 
-  std::cout<<"\t";
-  //std::cout << m_file_count << "      " << s_file_count;
-
-  for (int m = -1; m < m_file_count ; m++)
+  if (pcl::io::loadPCDFile (model_filename_, *model) < 0)
   {
-    for (int s = -1; s < s_file_count; s++)
-    {
-        if (m < 0)
-        {
-          if (s>-1)
-          std::cout << "scene_" << s << "\t";
-        }
-        else
-        {
-          if (s<0)
-            std::cout << "model_" << m << "\t";
-          else
-            std::cout << score[m][s] << "\t";
-        }
-    }
-    
-    std::cout<<std::endl;
+    std::cout << "Error loading model cloud." << std::endl;
+    return (-1);
   }
 
+  if (pcl::io::loadPCDFile (scene_filename_, *scene) < 0)
+  {
+    std::cout << "Error loading scene cloud." << std::endl;
+    return (-1);
+  }
 }
 
-
-void parseObject(ptree &parent){
-    object newObject;
-    // Name and color
-    newObject.name = parent.get<std::string>(TAG_NAME);
-    newObject.color = parent.get<std::string>(TAG_COLOR);
-
-    // Get indices
-    std::istringstream str(parent.get<std::string>(TAG_INDICES));
-    newObject.indices.indices.clear();
-    int i;
-    while(str >> i){
-        newObject.indices.indices.push_back(i);
-    }
-    _objectList.push_back(newObject);
-}
-
-
-void importObjectsInformation(const char* xmlFile)
+std::vector<int>
+correspondenceGroup ()
 {
-    ptree root;
-        
-    read_xml(xmlFile, root);
-
-    ptree& allObjects = root.get_child(TAG_SCENARIO + "." + TAG_ALLOBJECTS);
-
-    ptree::iterator it = allObjects.begin();
-    it++;
-    for(; it != allObjects.end(); it++)
-    {
-        parseObject(it->second);
-    }
-}
-
-
-void displayObjects()
-{
-	for (std::vector<object>::const_iterator it = _objectList.begin (); it != _objectList.end (); ++it)
-	{
-    std::cout << it->name << std::endl;
-    }
-}
-
-void createDir(std::string folder)
-{
-	fs::path f_path = fs::system_complete( fs::path(folder));
-
-	if (!fs::exists(f_path))
-	{
-		const int dir_err = mkdir(folder.c_str(), ACCESSPERMS);
-		if (dir_err == -1)
-		{
-    		printf("Error creating directory!");
-    		exit(0);
-		}	
-	}
-}
-
-void extractPCD(std::vector<object> objList, std::string folder, pcl::PointCloud<pcl::PointXYZRGBA>::Ptr scene_)
-{	
-	for(int i = 0; i < objList.size(); i++)
-  	{
-  		pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud_cluster (new pcl::PointCloud<pcl::PointXYZRGBA>);
-    	for (std::vector<int>::const_iterator pit = objList[i].indices.indices.begin (); pit != objList[i].indices.indices.end (); ++pit)
-    	//for(int j = 0; j < objList[i].indices.indices.size(); j++)
-      		cloud_cluster->points.push_back (scene_->points[*pit]); //*
-    
-    	cloud_cluster->width = cloud_cluster->points.size ();
-    	cloud_cluster->height = 1;
-    	cloud_cluster->is_dense = true;
-    	std::cout << "PointCloud representing the Cluster: " << cloud_cluster->points.size () << " data points." << std::endl;
-    	std::stringstream ss;
-    	ss << folder << "/"<< objList[i].name << ".pcd";
-    	writer.write<pcl::PointXYZRGBA> (ss.str (), *cloud_cluster, false); //*
-  	}
-}
-
-
-int
-correspondenceGrouping (std::string model, std::string scene)
-{ 
+  
 //  Load clouds
-	if (pcl::io::loadPCDFile (model, *model_cloud) < 0)
-  	{
-   		std::cout << "Error loading model cloud." << std::endl;
-    	return (-1);
-  	}
-
-  	if (pcl::io::loadPCDFile (scene, *scene_cloud) < 0)
-  	{
-   		std::cout << "Error loading scene cloud." << std::endl;
-    	return (-1);
- 	 }
+  loadCloud ();
 
 //  Compute Cloud Resolution
 
-  computeCloudResolution(model_cloud);
+  computeCloudResolution(model);
 
 //  Compute Normals
 
   pcl::NormalEstimationOMP<PointType, NormalType> norm_est;
   norm_est.setKSearch (10);
-  norm_est.setInputCloud (model_cloud);
+  norm_est.setInputCloud (model);
   norm_est.compute (*model_normals);
 
-  norm_est.setInputCloud (scene_cloud);
+  norm_est.setInputCloud (scene);
   norm_est.compute (*scene_normals);
 
 //  Downsample Clouds to Extract keypoints
@@ -420,17 +263,17 @@ correspondenceGrouping (std::string model, std::string scene)
   pcl::PointCloud<int> sampled_indices;
 
   pcl::UniformSampling<PointType> uniform_sampling;
-  uniform_sampling.setInputCloud (model_cloud);
+  uniform_sampling.setInputCloud (model);
   uniform_sampling.setRadiusSearch (model_ss_);
   uniform_sampling.compute (sampled_indices);
-  pcl::copyPointCloud (*model_cloud, sampled_indices.points, *model_keypoints);
-  std::cout << "Model total points: " << model_cloud->size () << "; Selected Keypoints: " << model_keypoints->size () << std::endl;
+  pcl::copyPointCloud (*model, sampled_indices.points, *model_keypoints);
+  std::cout << "Model total points: " << model->size () << "; Selected Keypoints: " << model_keypoints->size () << std::endl;
 
-  uniform_sampling.setInputCloud (scene_cloud);
+  uniform_sampling.setInputCloud (scene);
   uniform_sampling.setRadiusSearch (scene_ss_);
   uniform_sampling.compute (sampled_indices);
-  pcl::copyPointCloud (*scene_cloud, sampled_indices.points, *scene_keypoints);
-  std::cout << "Scene total points: " << scene_cloud->size () << "; Selected Keypoints: " << scene_keypoints->size () << std::endl;
+  pcl::copyPointCloud (*scene, sampled_indices.points, *scene_keypoints);
+  std::cout << "Scene total points: " << scene->size () << "; Selected Keypoints: " << scene_keypoints->size () << std::endl;
 
 //  Compute Descriptor for keypoints
 
@@ -439,12 +282,12 @@ correspondenceGrouping (std::string model, std::string scene)
 
   descr_est.setInputCloud (model_keypoints);
   descr_est.setInputNormals (model_normals);
-  descr_est.setSearchSurface (model_cloud);
+  descr_est.setSearchSurface (model);
   descr_est.compute (*model_descriptors);
 
   descr_est.setInputCloud (scene_keypoints);
   descr_est.setInputNormals (scene_normals);
-  descr_est.setSearchSurface (scene_cloud);
+  descr_est.setSearchSurface (scene);
   descr_est.compute (*scene_descriptors);
 
 //  Find Model-Scene Correspondences with KdTree
@@ -464,14 +307,15 @@ correspondenceGrouping (std::string model, std::string scene)
       continue;
     }
     int found_neighs = match_search.nearestKSearch (scene_descriptors->at (i), 1, neigh_indices, neigh_sqr_dists);
-    if(found_neighs == 1 && neigh_sqr_dists[0] < 0.25f) //  add match only if the squared descriptor distance is less than 0.25 (SHOT descriptor distances are between 0 and 1 by design)
+    if(found_neighs == 1 && neigh_sqr_dists[0] < kd_thres_) //  add match only if the squared descriptor distance is less than 0.25 (SHOT descriptor distances are between 0 and 1 by design)
     {
       pcl::Correspondence corr (neigh_indices[0], static_cast<int> (i), neigh_sqr_dists[0]);
       model_scene_corrs->push_back (corr);
     }
   }
-  std::cout << "Correspondences found: " << model_scene_corrs->size () << std::endl;
 
+  std::cout << "Correspondences found: " << model_scene_corrs->size () << std::endl;
+  
 //  Actual Clustering
 
   std::vector<Eigen::Matrix4f, Eigen::aligned_allocator<Eigen::Matrix4f> > rototranslations;
@@ -492,12 +336,12 @@ correspondenceGrouping (std::string model, std::string scene)
 
     rf_est.setInputCloud (model_keypoints);
     rf_est.setInputNormals (model_normals);
-    rf_est.setSearchSurface (model_cloud);
+    rf_est.setSearchSurface (model);
     rf_est.compute (*model_rf);
 
     rf_est.setInputCloud (scene_keypoints);
     rf_est.setInputNormals (scene_normals);
-    rf_est.setSearchSurface (scene_cloud);
+    rf_est.setSearchSurface (scene);
     rf_est.compute (*scene_rf);
 
     //  Clustering
@@ -551,103 +395,66 @@ correspondenceGrouping (std::string model, std::string scene)
     printf ("\n");
     printf ("        t = < %0.3f, %0.3f, %0.3f >\n", translation (0), translation (1), translation (2));
   }*/
-  
- return rototranslations.size();
+  std::vector<int> result;
+  result.push_back (int(model_scene_corrs->size ()));
+  result.push_back (rototranslations.size());
+  return result;
 }
-
+ 
 
 void
-CorrespondenceIteration(std::vector<std::string> fileNamesV, fs::path rootFolder)
-{	
-	pcl::PointCloud<pcl::PointXYZRGBA>::Ptr scene(new pcl::PointCloud<pcl::PointXYZRGBA>());
-	
-	std::ofstream myfile;
-	std::string resultFile = rootFolder.string() + "/Result.txt";
-	myfile.open (resultFile.c_str());
+pathIteration()
+{
+  if (fs::is_directory(scene_path)&& fs::is_directory(model_path))
+  { 
+    
+    const std::string ext = ".pcd";
+   //Creating Iterators for Model and Scene directories
 
-  //Extract all the objects from all the pcd in the root directory
+    fs::recursive_directory_iterator it_s(scene_path);
+    fs::recursive_directory_iterator endit_s;
 
-	for (std::vector<std::string>::iterator it = fileNamesV.begin(); it != fileNamesV.end(); ++it)
-	{
-		std::string pcdFile = *it + ".pcd";
-		std::string xmlFile = *it + ".xml";
+    // Looping over all models and scenes
+    std::ofstream myfile;
+    std::stringstream resultFile;
+    resultFile << "Result_" << model_ss_ << "_" << rf_rad_ <<  "_" <<  descr_rad_ << "_" << cg_size_ << "_" << cg_thresh_ << "_" << kd_thres_ << ".txt";
+    myfile.open (resultFile.str().c_str());
+    myfile << "Parameters: " << std::endl << "model_ss_ : " << model_ss_ << std::endl;
+    myfile << "rf_rad_ : " << rf_rad_ << std::endl << "descr_rad_ : " << descr_rad_ << std::endl;
+    myfile << "cg_size_ : " <<  cg_size_ << std::endl << "cg_thresh_ : " <<  cg_thresh_ << std::endl;
+    myfile << "kd_thres_ : " << kd_thres_ << std::endl;
+    
+    while(it_s != endit_s) //for every scene
+    {  
+      if(fs::is_regular_file(*it_s) && it_s->path().extension() == ext) 
+      {
+        scene_filename_ = scene_path.string() + it_s->path().filename().string();
+        fs::recursive_directory_iterator it_m(model_path);
+        fs::recursive_directory_iterator endit_m;
 
-		if (reader.read (pcdFile, *scene) < 0)
- 		{
-    	std::cout << "Error loading scene cloud." << std::endl;
-    	exit (0);
-  	}
-
-    if(!fs::exists(xmlFile)
-    {
-      std::cout<<"Corresponding .xml file not found."<<std::endl;
-      exit(0);
-    }
-
-  	importObjectsInformation(xmlFile.c_str());
- 		//displayObjects();
- 		createDir(*it);
- 		extractPCD(_objectList, *it, scene);
- 		_objectList.clear();
-
-  }
-
-
-  //For all objects in the directory
-
-  for (std::vector<std::string>::iterator it = fileNamesV.begin(); it != fileNamesV.end(); ++it)
-  {
- 		fs::path models_path( fs::initial_path<fs::path>());
- 		models_path = fs::system_complete(fs::path(*it));
-
- 		fs::directory_iterator it_m(models_path);
-    fs::directory_iterator endit_m;
-
-    	myfile << "===================================================================================================" << std::endl;
-    	myfile << *it << std::endl;
-    	myfile << "===================================================================================================" << std::endl;
-
-
-    	while(it_m != endit_m) //for every scene
-    	{  
-    		if(fs::is_regular_file(*it_m) && it_m->path().extension() == ".pcd") 
-      		{ 
-        		std::string scene_path = models_path.string() + "/" + it_m->path().filename().string();
-        		
-		        fs::directory_iterator it_m(models_path);
-        		fs::directory_iterator endit_m;
-
-        		while(it_m != endit_m) //for every model
-        		{  
-          			if(fs::is_regular_file(*it_m) && it_m->path().extension() == ".pcd") 
-          			{ 
-            			std::string model_filename = models_path.string() + "/" + it_m->path().filename().string();
-            		// DO CORRESPONDENCE GROUPING
-            			//std::cout << scene_filename << " <<<<<>>>>> " << model_filename << std::endl;
-            			//std::cout << it_r->path().filename().string() << " <<<<<>>>>> " << it_m->path().filename().string() << std::endl;
-            			//std::cout << "scene_" << j << "     model_" << i << "   Correspondence:  " <<  correspondenceGrouping(model_filename,scene_filename) <<std::endl;
-            			myfile << it_r->path().filename().string() << " <<<<<>>>>> " << it_m->path().filename().string()<< "   :  " << correspondenceGrouping(model_filename,scene_filename) <<std::endl;
-          			}
-
-          			++it_m;
-       			}
-
-       		}
-
-       		++it_r;
+        while(it_m != endit_m) //for every model
+        {  
+          if(fs::is_regular_file(*it_m) && it_m->path().extension() == ext) 
+          { 
+            model_filename_ = model_path.string() + it_m->path().filename().string();
+            // DO CORRESPONDENCE GROUPING
+            std::vector<int> res = correspondenceGroup();
+            myfile << it_s->path().filename().string() << " <<<>>> " << it_m->path().filename().string() << " : " << res[0] << " -> " << res[1] << std::endl;
+         } 
+          ++it_m;
         }
-	}
-
-  	myfile.close();
+      }
+      ++it_s;
+    }
+    myfile.close();
+  }
 }
-
 
 
 int
 main (int argc, char *argv[])
 {
-  fs::path folderName_ = parseCommandLine (argc, argv);
-  std::vector<std::string> fileNames_ = pathIteration(folderName_);
-  CorrespondenceIteration(fileNames_,folderName_);
+  parseCommandLine (argc, argv);
+  pathIteration();
   //displayScore();
 }

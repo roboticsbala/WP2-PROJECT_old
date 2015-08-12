@@ -28,12 +28,12 @@ bool show_keypoints_ (false);
 bool show_correspondences_ (false);
 bool use_cloud_resolution_ (false);
 bool use_hough_ (true);
-float model_ss_ (0.01f);
-float scene_ss_ (0.02f);
-float rf_rad_ (0.06f);
-float descr_rad_ (0.08f);
-float cg_size_ (0.015f);//4
-float cg_thresh_ (16.0f);//6
+float model_ss_ (0.015f);
+float scene_ss_ (0.015f);
+float rf_rad_ (0.06f); //GeoCon - 0.06f
+float descr_rad_ (0.08f); //GeoCon - 0.08f
+float cg_size_ (0.04f);//GeoCon - 0.015f
+float cg_thresh_ (6.0f);//GeoCon - 16.0f
 
 void
 showHelp (char *filename)
@@ -292,7 +292,7 @@ main (int argc, char *argv[])
       continue;
     }
     int found_neighs = match_search.nearestKSearch (scene_descriptors->at (i), 1, neigh_indices, neigh_sqr_dists);
-    if(found_neighs == 1 && neigh_sqr_dists[0] < 0.15f) //  add match only if the squared descriptor distance is less than 0.25 (SHOT descriptor distances are between 0 and 1 by design)
+    if(found_neighs == 1 && neigh_sqr_dists[0] < 0.18f) //  add match only if the squared descriptor distance is less than 0.25 (SHOT descriptor distances are between 0 and 1 by design)
     {	
       k++;
       pcl::Correspondence corr (neigh_indices[0], static_cast<int> (i), neigh_sqr_dists[0]);

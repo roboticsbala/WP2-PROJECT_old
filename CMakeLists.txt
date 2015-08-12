@@ -62,6 +62,13 @@ target_link_libraries (correspondence_grouping_SHOT_Iterative_v3 ${PCL_LIBRARIES
 #add_executable (transform_demo src/transform_demo.cpp)
 #target_link_libraries (transform_demo ${PCL_LIBRARIES})
 
+add_executable (objectExtractorIterative src/objectExtractorIterative.cpp)
+target_link_libraries (objectExtractorIterative ${PCL_LIBRARIES})
+
+add_executable (correspondence_grouping_SHOT_Iterative_Obj-Obj  src/correspondence_grouping_SHOT_Iterative_Obj-Obj.cpp)
+target_link_libraries (correspondence_grouping_SHOT_Iterative_Obj-Obj ${PCL_LIBRARIES})
+
+
 
 
 
